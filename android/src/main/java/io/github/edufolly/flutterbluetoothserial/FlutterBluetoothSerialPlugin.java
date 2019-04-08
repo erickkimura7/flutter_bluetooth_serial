@@ -248,6 +248,7 @@ public class FlutterBluetoothSerialPlugin implements MethodCallHandler,
                     socket.connect();
                 } catch(Exception ex) {
                     Log.e(TAG, ex.getMessage(), ex);
+                    result.error("connect_error", ex.getMessage(), exceptionToString(ex));
                     return;
                 }
 
